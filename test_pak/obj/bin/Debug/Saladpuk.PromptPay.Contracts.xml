@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Saladpuk.PromptPay.Contracts</name>
+    </assembly>
+    <members>
+        <member name="T:Saladpuk.PromptPay.Contracts.IPromptPayBuilder">
+            <summary>
+            มาตรฐานตัวสร้าง QR PromptPay
+            </summary>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Contracts.IPromptPayBuilder.CreateCreditTransferQrCode">
+            <summary>
+            สร้างรหัส QR สำหรับโอนเงินผ่านบริการพร้อมเพย
+            </summary>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Contracts.IPromptPayBuilder.CreateCreditTransferQrCode(Saladpuk.PromptPay.Contracts.Models.CreditTransfer)">
+            <summary>
+            สร้างรหัส QR สำหรับโอนเงินผ่านบริการพร้อมเพย
+            </summary>
+            <param name="transfer">ข้อมูลการโอนเงินผ่านบริการพร้อมเพย</param>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Contracts.IPromptPayBuilder.MobileNumber(System.String)">
+            <summary>
+            กำหนดเบอร์มือถือของผู้รับเงิน (CrediIPromptPayBuilder Transfer)
+            </summary>
+            <param name="value">เบอร์มือถือของผู้รับเงิน</param>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Contracts.IPromptPayBuilder.EWallet(System.String)">
+            <summary>
+            กำหนดรหัสกระเป๋าเงินอิเล็กทรอนิกส์ (CrediIPromptPayBuilder Transfer)
+            </summary>
+            <param name="value">รหัสกระเป๋าเงินอิเล็กทรอนิกส์</param>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Contracts.IPromptPayBuilder.BankAccount(System.String)">
+            <summary>
+            กำหนดรหัสบัญชีธนาคารผู้รับเงิน (CrediIPromptPayBuilder Transfer)
+            </summary>
+            <param name="value">รหัสบัญชีธนาคารผู้รับเงิน</param>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Contracts.IPromptPayBuilder.OTA(System.String)">
+            <summary>
+            กำหนดค่า OTA (CrediIPromptPayBuilder Transfer)
+            </summary>
+            <param name="value">ค่า OTA</param>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Contracts.IPromptPayBuilder.MerchantPresentedQR">
+            <summary>
+            กำหนดให้เป็นรูปแบบร้านเป็นผู้แสดง QR ให้ลูกค้าสแกน (CrediIPromptPayBuilder Transfer)
+            </summary>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Contracts.IPromptPayBuilder.CustomerPresentedQR">
+            <summary>
+            กำหนดให้เป็นรูปแบบลูกค้าเป็นผู้แสดง QR Code ให้ร้านค้าสแกน (CrediIPromptPayBuilder Transfer)
+            </summary>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Contracts.IPromptPayBuilder.CreateBillPaymentQrCode">
+            <summary>
+            สร้างรหัส QR ขอเรียกเก็บเงินสำหรับผู้ประกอบการ
+            </summary>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Contracts.IPromptPayBuilder.CreateBillPaymentQrCode(Saladpuk.PromptPay.Contracts.Models.BillPayment)">
+            <summary>
+            สร้างรหัส QR ขอเรียกเก็บเงินสำหรับผู้ประกอบการ
+            </summary>
+            <param name="payment">ข้อมูลการขอเรียกเก็บเงินสำหรับผู้ประกอบการ</param>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Contracts.IPromptPayBuilder.BillerSuffix(System.String)">
+            <summary>
+            กำหนดเลขผู้ให้บริการที่เป็นตัวแทนในการรับชำระเงิน (Bill Payment)
+            </summary>
+            <param name="value">เลขผู้ให้บริการที่เป็นตัวแทนในการรับชำระเงิน</param>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Contracts.IPromptPayBuilder.BillRef1(System.String)">
+            <summary>
+            กำหนดรหัสอ้างอิง 1 (Bill Payment)
+            </summary>
+            <param name="value">รหัสอ้างอิง 1</param>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Contracts.IPromptPayBuilder.BillRef2(System.String)">
+            <summary>
+            กำหนดรหัสอ้างอิง 2 (Bill Payment)
+            </summary>
+            <param name="value">รหัสอ้างอิง 2</param>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Contracts.IPromptPayBuilder.DomesticMerchant">
+            <summary>
+            กำหนดให้เป็นการใช้ภายในประเทศ (Bill Payment)
+            </summary>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Contracts.IPromptPayBuilder.CrossBorderMerchant">
+            <summary>
+            กำหนดให้เป็นการใช้ข้ามประเทศ (Bill Payment)
+            </summary>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Contracts.IPromptPayBuilder.NationalId(System.String)">
+            <summary>
+            กำหนดรหัสประจำตัวประชาชน หรือ เลขทะเบียนนิติบุคคล
+            </summary>
+            <param name="value">รหัสประจำตัวประชาชน หรือ เลขทะเบียนนิติบุคคล</param>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Contracts.IPromptPayBuilder.TaxId(System.String)">
+            <summary>
+            กำหนดเลขประจำตัวผู้เสียภาษี หรือ เลขประจำตัวผู้เสียภาษีของร้านค้า
+            </summary>
+            <param name="value">เลขประจำตัวผู้เสียภาษี หรือ เลขประจำตัวผู้เสียภาษีของร้านค้า</param>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Contracts.IPromptPayBuilder.Amount(System.Double)">
+            <summary>
+            จำนวนเงินที่จะเรียกเก็บ
+            </summary>
+            <param name="amount">จำนวนเงิน</param>
+        </member>
+        <member name="T:Saladpuk.PromptPay.Contracts.IPromptPayQrReader">
+            <summary>
+            มาตรฐานในการอ่านข้อมูลจาก QR PromptPay
+            </summary>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Contracts.IPromptPayQrReader.ReadQrPromptPay(System.String)">
+            <summary>
+            แปลความหมายของข้อความให้อยู่ในรูปแบบ QR PromptPay
+            </summary>
+            <param name="code">รหัส QR code ที่ต้องการอ่าน</param>
+            <returns>รายละเอียดของ QR</returns>
+        </member>
+        <member name="T:Saladpuk.PromptPay.Contracts.Models.BillPayment">
+            <summary>
+            ข้อมูลการขอเรียกเก็บเงินสำหรับผู้ประกอบการ
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Contracts.Models.BillPayment.AID">
+            <summary>
+            ถ้าเป็นการใช้ภายในประเทศจะมีค่าเป็น "A000000677010112"
+            ถ้าเป็นการใช้ข้ามประเทศจะมีค่าเป็น "A000000677012006"
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Contracts.Models.BillPayment.BillerId">
+            <summary>
+            เลขทะเบียนนิติบุคคล หรือ เลขประจำตัวผู้เสียภาษีของร้านค้า
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Contracts.Models.BillPayment.Suffix">
+            <summary>
+            เลขผู้ให้บริการที่เป็นตัวแทนในการรับชำระเงิน
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Contracts.Models.BillPayment.Reference1">
+            <summary>
+            รหัสอ้างอิง 1
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Contracts.Models.BillPayment.Reference2">
+            <summary>
+            รหัสอ้างอิง 2
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Contracts.Models.BillPayment.CrossBorderMerchantQR">
+            <summary>
+            เป็นการใช้ข้ามประเทศหรือไม่ ?
+            </summary>
+        </member>
+        <member name="T:Saladpuk.PromptPay.Contracts.Models.CreditTransfer">
+            <summary>
+            ข้อมูลการโอนเงินผ่านบริการพร้อมเพย
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Contracts.Models.CreditTransfer.AID">
+            <summary>
+            ถ้าเป็นรูปแบบร้านเป็นผู้แสดง QR ให้ลูกค้าสแกนจะมีค่าเป็น "A000000677010111"
+            ถ้าเป็นรูปแบบลูกค้าเป็นผู้แสดง QR Code ให้ร้านค้าสแกนจะมีค่าเป็น "A000000677010114"
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Contracts.Models.CreditTransfer.MobileNumber">
+            <summary>
+            เบอร์มือถือของผู้รับเงิน
+            </summary>
+            <remarks>
+            ต้องเป็นรหัสตามรูปแบบนี้ 0066XXXXXXXXX
+            </remarks>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Contracts.Models.CreditTransfer.NationalIdOrTaxId">
+            <summary>
+            รหัสประจำตัวประชาชน หรือ เลขประจำตัวผู้เสียภาษี
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Contracts.Models.CreditTransfer.EWalletId">
+            <summary>
+            รหัสกระเป๋าเงินอิเล็กทรอนิกส์
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Contracts.Models.CreditTransfer.BankAccount">
+            <summary>
+            รหัสบัญชีธนาคารผู้รับเงิน
+            </summary>
+            <remarks>
+            Bank code(3 digit) + account no.
+            </remarks>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Contracts.Models.CreditTransfer.OTA">
+            <summary>
+            ถ้าเป็น QR รูปแบบร้านค้าเป็นผู้แสดง QR ให้ลูกค้าสแกน ต้องกำหนดค่านี้ด้วย
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Contracts.Models.CreditTransfer.CustomerPresentedQR">
+            <summary>
+            เป็นรูปแบบลูกค้าเป็นผู้แสดง QR Code ให้ร้านค้าสแกนหรือไม่ ?
+            </summary>
+        </member>
+        <member name="T:Saladpuk.PromptPay.Contracts.Models.SellerVat">
+            <summary>
+            ข้อมูลภาษี
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Contracts.Models.SellerVat.SellerTaxBranchId">
+            <summary>
+            รหัสอ้างอิงตามระบบ ITMX
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Contracts.Models.SellerVat.VATRate">
+            <summary>
+            ภาษีที่เรียกเก็บในรูปแบบเปอร์เซ็นต์ (ต้องระบุทศนิยม 2 ตำแหน่งเสมอ)
+            </summary>
+            <remarks>
+            ภาษี 10% จะต้องกำหนดเป็น "10.00"
+            กรณีที่ไม่มีทศนิยมถือว่าไม่ถูกรูปแบบ เช่น "10"
+            </remarks>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Contracts.Models.SellerVat.VATAmount">
+            <summary>
+            มูลค่าภาษีที่แสดงอยู่บนใบเรียกเก็บ
+            </summary>
+        </member>
+        <member name="T:Saladpuk.PromptPay.Contracts.PromptPayCodeConventions">
+            <summary>
+            รหัสและแท๊กมาตรฐานของ PromptPay
+            </summary>
+        </member>
+        <member name="F:Saladpuk.PromptPay.Contracts.PromptPayCodeConventions.AIDTag">
+            <summary>
+            แท๊ก AID
+            </summary>
+        </member>
+        <member name="F:Saladpuk.PromptPay.Contracts.PromptPayCodeConventions.CreditTransferTag">
+            <summary>
+            แท๊กการโอนเงินผ่านบริการพร้อมเพย
+            </summary>
+        </member>
+        <member name="F:Saladpuk.PromptPay.Contracts.PromptPayCodeConventions.MobileTag">
+            <summary>
+            แท๊กเบอร์มือถือของผู้รับเงิน
+            </summary>
+        </member>
+        <member name="F:Saladpuk.PromptPay.Contracts.PromptPayCodeConventions.NationalIdOrTaxIdTag">
+            <summary>
+            แท๊กรหัสประจำตัวประชาชน หรือ เลขประจำตัวผู้เสียภาษี
+            </summary>
+        </member>
+        <member name="F:Saladpuk.PromptPay.Contracts.PromptPayCodeConventions.EWalletTag">
+            <summary>
+            แท๊กรหัสกระเป๋าเงินอิเล็กทรอนิกส์
+            </summary>
+        </member>
+        <member name="F:Saladpuk.PromptPay.Contracts.PromptPayCodeConventions.BankAccountTag">
+            <summary>
+            แท๊กรหัสบัญชีธนาคารผู้รับเงิน
+            </summary>
+        </member>
+        <member name="F:Saladpuk.PromptPay.Contracts.PromptPayCodeConventions.OTATag">
+            <summary>
+            แท๊ก OTA
+            </summary>
+        </member>
+        <member name="F:Saladpuk.PromptPay.Contracts.PromptPayCodeConventions.MerchantPresented">
+            <summary>
+            รูปแบบร้านเป็นผู้แสดง QR ให้ลูกค้าสแกน
+            </summary>
+        </member>
+        <member name="F:Saladpuk.PromptPay.Contracts.PromptPayCodeConventions.CustomerPresented">
+            <summary>
+            รูปแบบลูกค้าเป็นผู้แสดง QR Code ให้ร้านค้าสแกน
+            </summary>
+        </member>
+        <member name="F:Saladpuk.PromptPay.Contracts.PromptPayCodeConventions.BillPaymentTag">
+            <summary>
+            แท๊กการเรียกเก็บเงินสำหรับผู้ประกอบการ
+            </summary>
+        </member>
+        <member name="F:Saladpuk.PromptPay.Contracts.PromptPayCodeConventions.BillderIdTag">
+            <summary>
+            แท๊กเลขทะเบียนนิติบุคคล หรือ เลขประจำตัวผู้เสียภาษีของร้านค้า
+            </summary>
+        </member>
+        <member name="F:Saladpuk.PromptPay.Contracts.PromptPayCodeConventions.Reference1Tag">
+            <summary>
+            แท๊กรหัสอ้างอิง 1
+            </summary>
+        </member>
+        <member name="F:Saladpuk.PromptPay.Contracts.PromptPayCodeConventions.Reference2Tag">
+            <summary>
+            แท๊กรหัสอ้างอิง 2
+            </summary>
+        </member>
+        <member name="F:Saladpuk.PromptPay.Contracts.PromptPayCodeConventions.DomesticMerchant">
+            <summary>
+            เป็นการใช้ภายในประเทศ
+            </summary>
+        </member>
+        <member name="F:Saladpuk.PromptPay.Contracts.PromptPayCodeConventions.CrossBorderMerchant">
+            <summary>
+            การใช้ข้ามประเทศ
+            </summary>
+        </member>
+        <member name="T:Saladpuk.EMVCo.Contracts.IPromptPayQrInfo">
+            <summary>
+            มาตรฐานรายละเอียดของ QR PromptPay
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Contracts.IPromptPayQrInfo.Reusable">
+            <summary>
+            QR นี้สามารถจ่ายเงินซ้ำได้หรือไม่ ?
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Contracts.IPromptPayQrInfo.Currency">
+            <summary>
+            สกุลเงินที่ใช้จ่าย
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Contracts.IPromptPayQrInfo.CreditTransfer">
+            <summary>
+            ข้อมูลการโอนเงินผ่านบริการพร้อมเพย
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Contracts.IPromptPayQrInfo.BillPayment">
+            <summary>
+            ข้อมูลการขอเรียกเก็บเงินสำหรับผู้ประกอบการ
+            </summary>
+        </member>
+    </members>
+</doc>

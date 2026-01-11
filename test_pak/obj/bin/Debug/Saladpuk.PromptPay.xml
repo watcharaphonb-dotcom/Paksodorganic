@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Saladpuk.PromptPay</name>
+    </assembly>
+    <members>
+        <member name="T:Saladpuk.PromptPay.Facades.PPay">
+            <summary>
+            พร้อมเพย์
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Facades.PPay.StaticQR">
+            <summary>
+            สร้าง QR ที่ใช้ซ้ำได้หลายครั้ง
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Facades.PPay.DynamicQR">
+            <summary>
+            สร้าง QR ที่ใช้จ่ายเงินได้เพียงครั้งเดียวแล้วทิ้ง
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Facades.PPay.Reader">
+            <summary>
+            ตัวอ่าน QR
+            </summary>
+        </member>
+        <member name="T:Saladpuk.PromptPay.Models.PromptPayQrInfo">
+            <summary>
+            รายละเอียดของ QR
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Models.PromptPayQrInfo.Reusable">
+            <summary>
+            QR นี้สามารถจ่ายเงินซ้ำได้หรือไม่ ?
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Models.PromptPayQrInfo.Currency">
+            <summary>
+            สกุลเงินที่ใช้จ่าย
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Models.PromptPayQrInfo.CreditTransfer">
+            <summary>
+            ข้อมูลการโอนเงินผ่านบริการพร้อมเพย
+            </summary>
+        </member>
+        <member name="P:Saladpuk.PromptPay.Models.PromptPayQrInfo.BillPayment">
+            <summary>
+            ข้อมูลการขอเรียกเก็บเงินสำหรับผู้ประกอบการ
+            </summary>
+        </member>
+        <member name="M:Saladpuk.PromptPay.Models.PromptPayQrInfo.#ctor(System.Collections.Generic.List{Saladpuk.EMVCo.Contracts.IQrDataObject})">
+            <summary>
+            กำหนดค่าเริ่มต้นให้กับรายละเอียดของ QR
+            </summary>
+            <param name="segments">ส่วนประกอบทั้งหมดของ QR code</param>
+        </member>
+        <member name="T:Saladpuk.PromptPay.PromptPayQrBuilder">
+            <summary>
+            ตัวสร้าง QR PromptPay
+            </summary>
+        </member>
+        <member name="M:Saladpuk.PromptPay.PromptPayQrBuilder.#ctor">
+            <summary>
+            กำหนดค่าเริ่มต้นให้กับ ตัวสร้าง QR PromptPay
+            </summary>
+        </member>
+        <member name="M:Saladpuk.PromptPay.PromptPayQrBuilder.ToString">
+            <summary>
+            เรียกดูโค้ดทั้งหมดโดยไม่ระบุประเภทการใช้งาน
+            </summary>
+        </member>
+        <member name="T:Saladpuk.PromptPay.PromptPayQrReader">
+            <summary>
+            ตัวอ่านข้อมูลจาก QR code ในรูปแบบ PromptPay
+            </summary>
+        </member>
+        <member name="M:Saladpuk.PromptPay.PromptPayQrReader.CreateQrInfo">
+            <summary>
+            สร้างรายละเอียดของ QR
+            </summary>
+            <returns>รายละเอียดของ QR</returns>
+        </member>
+        <member name="M:Saladpuk.PromptPay.PromptPayQrReader.ReadQrPromptPay(System.String)">
+            <summary>
+            แปลความหมายของข้อความให้อยู่ในรูปแบบ QR PromptPay
+            </summary>
+            <param name="code">รหัส QR code ที่ต้องการอ่าน</param>
+            <returns>รายละเอียดของ QR</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Saladpuk.EMVCo</name>
+    </assembly>
+    <members>
+        <member name="T:Saladpuk.EMVCo.CRC16">
+            <summary>
+            ตัวตรวจสอบความถูกต้องของข้อมูล
+            </summary>
+        </member>
+        <member name="M:Saladpuk.EMVCo.CRC16.#ctor">
+            <summary>
+            กำหนดค่าเริ่มต้นให้กับตัวตรวจสอบความถูกต้องของข้อมูล
+            </summary>
+        </member>
+        <member name="M:Saladpuk.EMVCo.CRC16.ComputeChecksum(System.String)">
+            <summary>
+            สร้างรหัสเช็คความถูกต้องของข้อมูล
+            </summary>
+            <param name="data">ข้อมูลที่ต้องการนำไปสร้างรหัส</param>
+        </member>
+        <member name="T:Saladpuk.EMVCo.Models.QrDataObject">
+            <summary>
+            ตัวเก็บข้อมูล QR Data Object
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrDataObject.RawValue">
+            <summary>
+            ข้อมูลดิบ
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrDataObject.Id">
+            <summary>
+            รหัสประเภทข้อมูลที่อ่านจากข้อมูลดิบ
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrDataObject.Length">
+            <summary>
+            ความยาวของข้อมูลที่อ่านจากข้อมูลดิบ
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrDataObject.Value">
+            <summary>
+            ข้อมูลที่อ่านจากข้อมูลดิบ
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrDataObject.IdByConvention">
+            <summary>
+            รหัสประเภทข้อมูลตามมาตรฐาน
+            </summary>
+        </member>
+        <member name="M:Saladpuk.EMVCo.Models.QrDataObject.#ctor(System.String)">
+            <summary>
+            กำหนดค่าพื้นฐานของ QR Data Object
+            </summary>
+            <param name="rawValue">ข้อมูลดิบ</param>
+        </member>
+        <member name="T:Saladpuk.EMVCo.Models.QrInfo">
+            <summary>
+            รายละเอียดของ QR
+            </summary>
+        </member>
+        <member name="M:Saladpuk.EMVCo.Models.QrInfo.#ctor(System.Collections.Generic.List{Saladpuk.EMVCo.Contracts.IQrDataObject})">
+            <summary>
+            กำหนดค่าเริ่มต้นให้กับรายละเอียดของ QR
+            </summary>
+            <param name="segments">ส่วนประกอบทั้งหมดของ QR code</param>
+        </member>
+        <member name="M:Saladpuk.EMVCo.Models.QrInfo.GetSegmentValue(Saladpuk.EMVCo.Contracts.QrIdentifier)">
+            <summary>
+            ดึงข้อมูลจากส่วนประกอบ โดยการระบุประเภทข้อมูลที่ต้องการ
+            </summary>
+            <param name="identifier">ประเภทข้อมูลที่ต้องการอ่าน</param>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrInfo.Segments">
+            <summary>
+            ส่วนประกอบทั้งหมดของ QR code
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrInfo.PayloadFormatIndicator">
+            <summary>
+            เวอร์ชั่นของการทำธุรกรรม
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrInfo.PointOfInitiationMethod">
+            <summary>
+            รหัสรูปแบบของการทำธุรกรรม
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrInfo.MerchantAccountInformation">
+            <summary>
+            รหัสรายละเอียดข้อมูลของ Merchant
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrInfo.MerchantCategoryCode">
+            <summary>
+            รหัสหมวดของ Merchant ตามมาตรฐาน ISO 18245
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrInfo.TransactionCurrency">
+            <summary>
+            รหัสสกุลเงินที่ใช้ในการทำธุรกรรม
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrInfo.TransactionAmount">
+            <summary>
+            กำหนดจำนวนเงินที่จะเรียกเก็บ
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrInfo.TipOrConvenienceIndicator">
+            <summary>
+            ทิปที่ฝั่งจ่ายเงินพอใจจะมอบให้
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrInfo.ValueOfConvenienceFeeFixed">
+            <summary>
+            ค่าธรรมเนียมที่ถูกเรียกเก็บแบบตายตัว
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrInfo.ValueOfConvenienceFeePercentage">
+            <summary>
+            ค่าธรรมเนียมที่ถูกเรียกเก็บแบบเป็นเปอร์เซ็นต์
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrInfo.CountryCode">
+            <summary>
+            รหัสประเทศของร้านค้า (ตามมาตรฐาน ISO 3166)
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrInfo.MerchantName">
+            <summary>
+            ชื่อ Merchant
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrInfo.MerchantCity">
+            <summary>
+            รหัสเมืองที่ตั้งของ Merchant
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrInfo.PostalCode">
+            <summary>
+            รหัสไปรษณีย์ของ Merchant
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrInfo.AdditionalData">
+            <summary>
+            รหัสรายละเอียดเพิ่มเติมอื่นๆ
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrInfo.CRC">
+            <summary>
+            รหัสในการตรวจสอบความถูกต้องของข้อมูล
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrInfo.MerchantInformationLanguageTemplate">
+            <summary>
+            รายละเอียดเพิ่มเติมต่างๆของ Merchant
+            </summary>
+        </member>
+        <member name="P:Saladpuk.EMVCo.Models.QrInfo.RFU">
+            <summary>
+            รหัสข้อมูลอื่นๆ
+            </summary>
+        </member>
+        <member name="T:Saladpuk.EMVCo.QrBuilder">
+            <summary>
+            ตัวสร้าง QR ตามมาตรฐาน EMVCo
+            </summary>
+            <typeparam name="T">ตัวสร้าง QR</typeparam>
+        </member>
+        <member name="P:Saladpuk.EMVCo.QrBuilder.QrDataObjects">
+            <summary>
+            ส่วนประกอบทั้งหมดของ QR code
+            </summary>
+        </member>
+        <member name="M:Saladpuk.EMVCo.QrBuilder.#ctor">
+            <summary>
+            กำหนดค่าเริ่มต้นให้กับ ตัวสร้าง QR
+            </summary>
+        </member>
+        <member name="M:Saladpuk.EMVCo.QrBuilder.ToString">
+            <summary>
+            เรียกดูโค้ดทั้งหมดโดยไม่ระบุประเภทการใช้งาน
+            </summary>
+        </member>
+        <member name="T:Saladpuk.EMVCo.QrReader">
+            <summary>
+            ตัวอ่านข้อมูลจาก QR code
+            </summary>
+        </member>
+        <member name="F:Saladpuk.EMVCo.QrReader.Segments">
+            <summary>
+            ส่วนประกอบทั้งหมดของ QR code
+            </summary>
+        </member>
+        <member name="M:Saladpuk.EMVCo.QrReader.Read(System.String)">
+            <summary>
+            แปลความหมายของข้อความให้เป็ QR code
+            </summary>
+            <param name="code">รหัส QR code ที่ต้องการอ่าน</param>
+            <returns>รายละเอียดของ QR</returns>
+        </member>
+        <member name="M:Saladpuk.EMVCo.QrReader.CreateQrInfo">
+            <summary>
+            สร้างรายละเอียดของ QR
+            </summary>
+            <returns>รายละเอียดของ QR</returns>
+        </member>
+    </members>
+</doc>
